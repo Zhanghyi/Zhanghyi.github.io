@@ -1,6 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=http://123.249.126.235:3002/" />
-  </head>
+<head>
+    <title>Website Options</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Add jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!-- Add Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">选择模式</h1>
+
+        <div class="row justify-content-around mt-4">
+            <div class="col-md-5 my-2 border p-4">
+                <h2 class="mb-3">API模式</h2>
+                <p>于3月2日更新, 接入OpenAI官方GPT3.5API <a href="https://www.163.com/dy/article/HUQN97JG0512B07B.html" target="_blank">新闻</a> </p>
+                <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>连接方式</th>
+                          <th>回复速度</th>
+                          <th>费用</th>
+                          <th>并发访问</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>GPT 3.5 API</th>
+                      <th>快</th>
+                      <th>$0.002/1000 tokens</th>
+                      <th>支持</th>
+                    </tr>
+                  </tbody>
+              </table>
+                <a href="https://zhanghyi.github.io/chat/api" target="_blank" class="btn btn-primary px-5 py-3 mt-3 mr-3">访问API模式</a>
+                <button onclick="copyToClipboard('https://zhanghyi.github.io/chat/api')" class="btn btn-secondary px-5 py-3 mt-3">复制链接</button>
+            </div>
+            <div class="col-md-5 my-2 border p-4">
+                <h2 class="mb-3">网页session模式</h2>
+                <p>使用网页端accessToken访问chatgpt, 等价于直接访问chatgpt网页端</p>
+                <table class="table table-striped">
+                  <thead>
+                       <tr>
+                          <th>连接方式</th>
+                          <th>回复速度</th>
+                          <th>费用</th>
+                          <th>并发访问</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>网页端accessToken</th>
+                      <th>较慢</th>
+                      <th>免费</th>
+                      <th>不支持</th>
+                    </tr>
+                  </tbody>
+              </table>
+                <a href="https://zhanghyi.github.io/chat/session" target="_blank" class="btn btn-primary px-5 py-3 mt-3 mr-3">访问网页session模式</a>
+                <button onclick="copyToClipboard('https://zhanghyi.github.io/chat/session')" class="btn btn-secondary px-5 py-3 mt-3">复制链接</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(url) {
+            var input = document.createElement('input');
+            input.setAttribute('value', url);
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            alert("URL copied to clipboard: " + url);
+        }
+    </script>
+</body>
 </html>
